@@ -1,0 +1,93 @@
+( pcb2gcode 1.1.4 )
+
+G94     ( Inches per minute feed rate. )
+G20     ( Units == INCHES.             )
+G90     ( Absolute coordinates.        )
+S10000  ( RPM spindle speed.           )
+M3      ( Spindle on clockwise.        )
+
+G64 P0.00500 ( set maximum deviation from commanded toolpath )
+
+G04 P0 ( dwell for no time -- G64 should not smooth over this point )
+G00 Z0.02000 ( retract )
+
+G00 X-0.09884 Y0.73314 ( rapid move to begin. )
+G01 Z-0.01500 F1.75000 ( plunge. )
+G04 P0 ( dwell for no time -- G64 should not smooth over this point )
+X-0.09884 Y0.73314
+X-0.09884 Y-0.09586
+X-0.09784 Y-0.09586
+X-0.09784 Y-0.09686
+X-0.09684 Y-0.09686
+X-0.09684 Y-0.09786
+X1.80116 Y-0.09786
+X1.80116 Y-0.09686
+X1.80216 Y-0.09686
+X1.80216 Y-0.09586
+X1.80316 Y-0.09586
+X1.80316 Y0.83214
+X1.80216 Y0.83214
+X1.80216 Y0.83314
+X1.80116 Y0.83314
+X1.80116 Y0.83414
+X-0.09684 Y0.83414
+X-0.09684 Y0.83314
+X-0.09784 Y0.83314
+X-0.09784 Y0.83214
+X-0.09884 Y0.83214
+X-0.09884 Y0.73314
+G01 Z-0.05000 F1.75000 ( plunge. )
+G04 P0 ( dwell for no time -- G64 should not smooth over this point )
+X-0.09884 Y0.73314
+X-0.09884 Y-0.09586
+X-0.09784 Y-0.09586
+X-0.09784 Y-0.09686
+X-0.09684 Y-0.09686
+X-0.09684 Y-0.09786
+X1.80116 Y-0.09786
+X1.80116 Y-0.09686
+X1.80216 Y-0.09686
+X1.80216 Y-0.09586
+X1.80316 Y-0.09586
+X1.80316 Y0.83214
+X1.80216 Y0.83214
+X1.80216 Y0.83314
+X1.80116 Y0.83314
+X1.80116 Y0.83414
+X-0.09684 Y0.83414
+X-0.09684 Y0.83314
+X-0.09784 Y0.83314
+X-0.09784 Y0.83214
+X-0.09884 Y0.83214
+X-0.09884 Y0.73314
+G01 Z-0.08500 F1.75000 ( plunge. )
+G04 P0 ( dwell for no time -- G64 should not smooth over this point )
+X-0.09884 Y0.73314
+X-0.09884 Y-0.09586
+X-0.09784 Y-0.09586
+X-0.09784 Y-0.09686
+X-0.09684 Y-0.09686
+X-0.09684 Y-0.09786
+X1.80116 Y-0.09786
+X1.80116 Y-0.09686
+X1.80216 Y-0.09686
+X1.80216 Y-0.09586
+X1.80316 Y-0.09586
+X1.80316 Y0.83214
+X1.80216 Y0.83214
+X1.80216 Y0.83314
+X1.80116 Y0.83314
+X1.80116 Y0.83414
+X-0.09684 Y0.83414
+X-0.09684 Y0.83314
+X-0.09784 Y0.83314
+X-0.09784 Y0.83214
+X-0.09884 Y0.83214
+X-0.09884 Y0.73314
+
+G04 P0 ( dwell for no time -- G64 should not smooth over this point )
+G00 Z0.02000 ( retract )
+
+M9 ( Coolant off. )
+M2 ( Program end. )
+
