@@ -1,0 +1,44 @@
+Copyright (C) 2014 mirage335
+See the end of the file for license conditions.
+See license.txt for OpenEtherSurge license conditions.
+
+Open-source network Ethernet surge protector. Designed to keep both fast low-energy and slow high-energy transients from knocking equipment offline.
+
+__Usage__
+EXT jack should face external network, the source of potential surges, while SAFE jack faces sensitive equipment. Optionally, a quarter-wavelength shorted ethernet cable may be soldered to the STUB header, for maximum endurance suppression.
+
+Stub lengths are as follows, +/-5% (20% 3dB bandwidth, 10% 1.5dB).
+
+10BaseT - 10MHz - 30m, 98.4252ft, ~100ft
+100BaseT - 125MHz - 0.6m, 1.9685in, ~1ft 11.5in
+1000BaseT - 125MHz - 0.6m, 1.9685in, ~1ft 11.5in
+
+Shielded cable (U/FTP, F/UTP, S/UTP, or better) should be used to redirect common-mode faults. Additionally, while autonegotation seems to take place with ~100MHz frequency content, use of a quarter wave stub probably precludes interoperation between 10BaseT, 100/1000BaseT, and 10GBaseT.
+
+__Design__
+SP3003-08ATG TVS diode array clamps fast transients, up to its 40A rating. Beyond that, spark gaps, inductors, and (optionally) quarter-wave stub mechanisms divert serious faults.
+
+Oshpark dual-layer PCB stackups have been estimated to provide a ~100Ohm differential characteristic impedance with 35mil traces separated by an 10mil gap using the TXLINE program as of late 2014. As this is fairly large, and the frequency content in question is generally <125MHz, such care may be mostly neglected for compactness.
+
+COTS suppressor devices seem to lack the ideal combination of >150A surge ratings, <1pF parasitic capacitance, <5ns response times, and <20V trigger/clamping voltages. A 'universal' stub bandpass filter, common in amateur radio, may absorb lower-frequency faults.
+
+USA companies provide all parts in these schematics.
+
+__Safety__
+
+
+__Copyright__
+This file is part of OpenEtherSurge.
+
+OpenEtherSurge is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+OpenEtherSurge is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with OpenEtherSurge.  If not, see <http://www.gnu.org/licenses/>.
